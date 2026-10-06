@@ -87,7 +87,7 @@ RUN git clone --recurse-submodules https://github.com/amd/xdna-driver.git
 
 # Build XRT base (headers + libs)
 WORKDIR /build/xdna-driver/xrt/build
-RUN ./build.sh -npu -opt
+RUN ./build.sh -npu -opt -noctest
 
 # Install XRT base .deb
 RUN apt-get update && apt install -y ./Release/xrt_*.deb && rm -rf /var/lib/apt/lists/*
